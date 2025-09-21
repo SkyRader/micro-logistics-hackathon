@@ -1,5 +1,6 @@
 from flask import Blueprint, request, jsonify
 from ..storage import get_current_user, add_food_item, read_food_items
+from backend.auth import verify_token
 
 donor_bp = Blueprint("donor", __name__)
 
