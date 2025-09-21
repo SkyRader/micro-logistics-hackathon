@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-import pandas as pd # 1. Import pandas
+import pandas as pd
 from backend.storage import read_food_items, claim_food_item, mark_delivered
 from backend.auth import login_required
 
@@ -10,13 +10,13 @@ ngo_bp = Blueprint("ngo", __name__)
 def test():
     return jsonify({"message": "NGO endpoint working!"})
 
-# --- List Available Food (Add NaN handling) ---
+# --- List Available Food (REVERTED) ---
 @ngo_bp.route("/available", methods=["GET"])
 @login_required(role="ngo")
 def available_food(user):
     df = read_food_items()
     available = df[df["status"] == "Available"]
-    # 2. Add NaN handling for safety
+    # We keep the NaN handling for stability
     available_safe = available.fillna('')
     return jsonify(available_safe.to_dict(orient="records")), 200
 
@@ -38,16 +38,12 @@ def deliver(user, food_id):
         return jsonify({"error": "Food not found"}), 400
     return jsonify(delivered), 200
 
-# --- List My Claimed Items (NEW ENDPOINT) ---
+# --- List My Claimed Items (unchanged) ---
 @ngo_bp.route("/my_claims", methods=["GET"])
 @login_required(role="ngo")
 def my_claims(user):
-    """
-    Fetches all food items claimed by the currently authenticated NGO.
-    """
     df = read_food_items()
-    # Filter for items where claimedBy matches the user's ID
     my_claimed_items = df[df["claimedBy"] == user["uid"]]
-    # Add NaN handling
     my_claimed_items_safe = my_claimed_items.fillna('')
     return jsonify(my_claimed_items_safe.to_dict(orient="records")), 200
+

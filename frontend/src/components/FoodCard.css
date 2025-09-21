@@ -1,75 +1,80 @@
 .food-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Two equal columns */
-  grid-template-rows: auto; /* Rows grow as needed */
-  gap: 8px 20px; /* Space between rows and columns */
-  
-  /* Styling to match screenshot */
-  background-color: #fffaf0; /* Light creamy orange */
-  border-radius: 20px;
-  padding: 25px;
+  background-color: #fffaf0; /* A very light orange (floral white) */
+  border: 1px solid #ffcc80; /* Light orange border */
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #444;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-  border: 1px solid #ffe8cc;
-  
-  /* Define grid areas for easy placement */
-  grid-template-areas:
-    "name qty"
-    "provider qty"
-    "description description"
-    "expiry location"
-    "expiry button";
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-/* Placing each element in its designated grid area */
-.item-name         { grid-area: name; }
-.provider-name     { grid-area: provider; }
-.item-qty          { grid-area: qty; justify-self: end; } /* Align to the right */
-.item-description  { grid-area: description; }
-.item-expiry       { grid-area: expiry; align-self: end; } /* Align to the bottom of its cell */
-.item-location     { grid-area: location; justify-self: center; }
-.claim-button      { grid-area: button; justify-self: end; } /* Align to the right */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ffe0b2;
+  padding-bottom: 10px;
+}
 
-/* Styling individual elements */
 .item-name {
-  font-size: 1.5em;
-  font-weight: 600;
-  color: #d95f02; /* Darker orange for the title */
   margin: 0;
+  font-size: 1.4em;
+  color: #d95f02;
 }
 
-.provider-name,
-.item-qty,
-.item-description,
-.item-expiry,
-.item-location {
-  font-size: 1.1em;
+.item-qty {
+  background-color: #ffe0b2;
+  color: #bf5600;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.9em;
+  font-weight: bold;
 }
 
 .item-description {
-  margin-top: 10px;
-  margin-bottom: 20px;
+  color: #555;
+  font-size: 1em;
+  line-height: 1.5;
+  flex-grow: 1;
 }
 
-.provider-name {
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.item-expiry,
+.item-location {
+  font-size: 0.9em;
   color: #666;
 }
 
 .claim-button {
-  background-color: #ff9800; /* Vibrant orange */
+  background-color: #ff7f50;
   color: white;
   border: none;
-  border-radius: 25px; /* Fully rounded ends */
-  padding: 12px 25px;
+  border-radius: 8px;
+  padding: 12px 24px;
   font-size: 1em;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.2s ease;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
 }
 
 .claim-button:hover {
-  background-color: #e68900; /* Darker shade on hover */
-  transform: translateY(-2px); /* Slight lift effect */
+  background-color: #e66a3e;
+  transform: translateY(-2px);
 }
+

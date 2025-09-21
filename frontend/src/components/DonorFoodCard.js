@@ -1,48 +1,41 @@
 import React from 'react';
-import './DonorFoodCard.css'; // We will create this CSS file next
+import './FoodCard.css';
 
-// A small, reusable component for the status badge
-const StatusBadge = ({ status }) => {
-  // Return a CSS class based on the status value
-  const getStatusClass = () => {
-    switch (status) {
-      case 'Available':
-        return 'status-available';
-      case 'Claimed':
-        return 'status-claimed';
-      case 'Delivered':
-        return 'status-delivered';
-      default:
-        return '';
-    }
-  };
-
-  return <div className={`status-badge ${getStatusClass()}`}>{status}</div>;
-};
-
-
-function DonorFoodCard({ item }) {
+function FoodCard({ item, onClaim }) {
   const formatDate = (dateString) => {
     if (!dateString) return 'N/A';
     return new Date(dateString).toLocaleDateString();
   };
 
   return (
-    <div className="donor-food-card">
+    // 1. Conditionally add the 'urgent-card' class if item.isUrgent is true
+    <div className={`food-card ${item.isUrgent ? 'urgent-card' : ''}`}>
       <div className="card-header">
-        <h4 className="item-title">{item.title || 'Untitled Item'}</h4>
-        <StatusBadge status={item.status} />
+        <h3 className="item-name">{item.title || 'Untitled Item'}</h3>
+        <span className="item-qty">Qty: {item.quantity || 0}</span>
       </div>
-      <p className="item-info"><strong>Quantity:</strong> {item.quantity || 0}</p>
-      <p className="item-info"><strong>Expires on:</strong> {formatDate(item.expiryDate)}</p>
-      <p className="item-info"><strong>Location:</strong> {item.location || 'Unknown'}</p>
-      {item.claimedBy && (
-        <p className="claimed-by-info">
-          <strong>Claimed by:</strong> User ID ending in ...{item.claimedBy.slice(-6)}
-        </p>
-      )}
+
+      <p className="item-description">{item.description || 'No description available.'}</p>
+      
+      <div className="card-footer">
+        <div className="footer-info">
+          <span className="item-expiry">Expires: {formatDate(item.expiryDate)}</span>
+          <span className="item-location">Location: {item.location || 'Unknown'}</span>
+        </div>
+        <div className="footer-actions">
+          {/* 2. Conditionally render the 'Expires Soon!' tag */}
+          {item.isUrgent && <span className="urgent-tag">Expires Soon!</span>}
+          <button 
+            className="claim-button" 
+            onClick={() => onClaim(item.id)}
+          >
+            Claim Item
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
 
-export default DonorFoodCard;
+export default FoodCard;
+
