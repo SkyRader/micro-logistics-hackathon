@@ -1,0 +1,11 @@
+id,donorId,imageURL,title,description,category,quantity,expiryDate,location,status,claimedBy,claimedAt,deliveredAt
+food_001,user_123,https://firebase.../rice.jpg,Cooked Rice,"5 plates, vegetarian",Veg,5,2025-09-22T20:00:00Z,"Koramangala, Bangalore",Delivered,user_456,2025-09-21T14:30:00Z,2025-09-21T17:00:00Z
+food_002,user_126,https://firebase.../sandwich.jpg,Veg Sandwiches,"10 packs, contains dairy",Veg,10,2025-09-21T22:00:00Z,"Indiranagar, Bangalore",Available,,,
+food_003,user_124,https://firebase.../chicken.jpg,Chicken Curry with Rice,"8 portions, non-veg",Non-Veg,8,2025-09-22T15:00:00Z,"Whitefield, Bangalore",Claimed,user_129,2025-09-21T18:00:00Z,
+food_004,user_127,https://firebase.../fruits.jpg,Fresh Fruits Basket,"Bananas, apples, oranges",Veg,15,2025-09-25T12:00:00Z,"Jayanagar, Bangalore",Available,,,
+food_005,user_125,https://firebase.../bread.jpg,Bread Packets,"6 loaves, fresh",Veg,6,2025-09-23T09:00:00Z,"HSR Layout, Bangalore",Delivered,user_132,2025-09-20T19:30:00Z,2025-09-21T09:00:00Z
+food_006,user_128,https://firebase.../milk.jpg,Milk Packets,"12 packets, 500ml each",Veg,12,2025-09-22T08:00:00Z,"BTM Layout, Bangalore",Available,,,
+food_007,user_129,https://firebase.../biryani.jpg,Chicken Biryani,"15 boxes, spicy",Non-Veg,15,2025-09-22T21:00:00Z,"Electronic City, Bangalore",Claimed,user_125,2025-09-21T20:45:00Z,
+food_008,user_130,https://firebase.../dal.jpg,Dal & Chapati,"20 meals, vegetarian",Veg,20,2025-09-22T19:00:00Z,"MG Road, Bangalore",Delivered,user_126,2025-09-21T13:15:00Z,2025-09-21T16:00:00Z
+food_009,user_131,https://firebase.../snacks.jpg,Snacks Packets,"Chips, biscuits, juices",Veg,30,2025-09-24T18:00:00Z,"Rajajinagar, Bangalore",Available,,,
+food_010,user_132,https://firebase.../fish.jpg,Fish Curry,"10 servings, with rice",Non-Veg,10,2025-09-22T14:00:00Z,"Malleshwaram, Bangalore",Claimed,user_124,2025-09-21T15:40:00Z,
