@@ -1,7 +1,7 @@
 # Ignore secrets
+node_modules/
+package-lock.json
+backend/__pycache__/
+*.pyc
 backend/firebase-service-account.json
 backend/.env
-
-# Ignore node modules
-node_modules/
-frontend/node_modules/
