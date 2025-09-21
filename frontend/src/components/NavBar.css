@@ -1,27 +1,19 @@
-/* A modern reset */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+/* General Navbar styling */
 .topnav {
-  /* Layout */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 30px;
-  width: 100%;
-  position: fixed; /* Keep it at the top */
+  padding: 10px 30px;
+  background-color: #ff7f50; /* Main theme color */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
   z-index: 1000;
-
-  /* Styling */
-  background-color: #ff7f50; /* Coral orange */
-  color: white;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  box-sizing: border-box; /* <-- THIS IS THE FIX */
 }
 
 .nav-left .logo {
@@ -33,19 +25,27 @@
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 25px; /* Adds space between items */
+  gap: 25px; /* Spacing between items */
 }
 
 .user-info {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
-  padding: 5px;
-  border-bottom: 2px solid transparent; /* For hover effect */
-  transition: border-color 0.3s;
 }
 
-.user-info:hover {
-  border-color: white; /* Underline on hover */
+/* --- THIS IS THE NEW STYLE FOR THE LOGOUT BUTTON --- */
+.logout-button {
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-left: 2px solid rgba(255, 255, 255, 0.5); /* Visual separator */
+  transition: background-color 0.2s ease;
+}
+
+.logout-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
 }
 
 .profile-img {
@@ -55,9 +55,5 @@
   object-fit: cover;
   border: 2px solid white;
   cursor: pointer;
-  transition: transform 0.2s ease;
 }
 
-.profile-img:hover {
-  transform: scale(1.1); /* Slightly enlarge on hover */
-}
