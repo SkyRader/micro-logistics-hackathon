@@ -3,6 +3,7 @@ body{
     padding: 0;
     background-image: url("loginbg.jpg");
     background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .loginbox{
@@ -10,7 +11,7 @@ body{
     padding-left: 80px;
     padding-right: 80px;
     padding-bottom: 50px;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgb(255, 255, 255);
     margin: 80px 480px 80px;
     width: 500px;
     height: 500px;
@@ -26,27 +27,29 @@ body{
     margin-bottom: 50px;
 }
 
-.formbox{
-    padding-left: 10px;
-    width: 500px;
-    height: 25px;
-    border-radius: 20px;
-    margin-bottom: 10px;
-}
+
 
 .submit{
     margin-left: 150px;
     width:230px;
     height:30px;
+    margin-top: 20px;
     background-color: rgb(192, 96, 32);
     color: white;
-    border-radius: 5px;
+    border-radius: 20px;
 }
 
-.dropdown{
-    padding-left: 10px;
-    width: 513px;
-    height: 40px;
-    border-radius: 20px;
-    margin-bottom: 10px;
+
+
+.formbox {
+  border: 2px solid orange;   /* same border thickness + color */
+  border-radius: 5px;         /* same rounded corners */
+  padding: 8px;               /* equal padding inside */
+  font-size: 16px;            /* same font size */
+  outline: none;              /* remove default focus outlines */
+  appearance: none;           /* remove browser default dropdown styling */
+  -webkit-appearance: none;   /* Safari/Chrome */
+  -moz-appearance: none;      /* Firefox */
+  width: 500px;
+  margin-bottom: 10px;
 }

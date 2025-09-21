@@ -4,12 +4,12 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 // 🔹 Your Firebase config
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyAeVaOA4686T3qd9JCBX1WwS5STtxeiSqw",
+  authDomain: "micro-logistics-e894b.firebaseapp.com",
+  projectId: "micro-logistics-e894b",
+  storageBucket: "micro-logistics-e894b.firebasestorage.app",
+  messagingSenderId: "175002672343",
+  appId: "1:175002672343:web:d933f142b99a752ab6e492"
 };
 
 // Initialize Firebase

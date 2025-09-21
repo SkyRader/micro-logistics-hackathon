@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./logincss.css";
-import { auth, signInWithEmailAndPassword } from "./firebase";
+import { auth, signInWithEmailAndPassword } from "../firebase";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -14,16 +14,34 @@ function Login() {
     }
 
     try {
+      // Firebase sign in
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-      // Optional: Save user info & role in localStorage
+      // Get Firebase ID token
+      const idToken = await user.getIdToken();
+
+      // Save user info and token locally
       localStorage.setItem("userEmail", user.email);
       localStorage.setItem("userRole", role);
+      localStorage.setItem("firebaseToken", idToken);
+
+      // Test backend protected endpoint
+      const response = await fetch(`http://localhost:5000/${role.toLowerCase()}/test`, {
+        method: "GET",
+        headers: {
+          Authorization: idToken
+        }
+      });
+
+      const data = await response.json();
+      console.log("Backend response:", data);
 
       alert(`Login successful as ${role}`);
-      // Redirect to dashboard or home page
-      // e.g., window.location.href = "/dashboard";
+
+      // Redirect to dashboard based on role
+      // window.location.href = role === "NGO" ? "/ngo-dashboard" : "/donor-dashboard";
+
     } catch (error) {
       console.error(error);
       alert("Login failed: " + error.message);
@@ -36,7 +54,7 @@ function Login() {
         <p>Hello</p>
       </div>
       <form onSubmit={(e) => e.preventDefault()}>
-        <select className="dropdown" value={role} onChange={(e) => setRole(e.target.value)}>
+        <select className="formbox" value={role} onChange={(e) => setRole(e.target.value)}>
           <option>--Select--</option>
           <option>NGO</option>
           <option>Provider</option>
@@ -52,12 +70,12 @@ function Login() {
         <input
           type="password"
           className="formbox"
-          placeholder="Enter password"
-          style={{ width: 406 }}
+          style={{ width: 406 , marginLeft: 10}}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
         <br />
+        <input className="formbox" placeholder="Phone number"/>
         <a style={{ float: "left" }}>Don't have an account?</a>
         <a href="#su">Sign up</a>
         <a style={{ float: "right" }} href="#fp">
