@@ -7,8 +7,7 @@ body, html {
 }
 
 .auth-background {
-  /* THIS IS THE FIX: Use %PUBLIC_URL% to correctly reference the image */
-  background-image: url('loginbg.jpg');
+  background-image: url('./loginbg.jpg'); /* Updated path for images in src folder */
   background-size: cover;
   background-position: center;
   width: 100vw;
@@ -23,31 +22,35 @@ body, html {
   background-color: white;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  overflow: hidden; /* Keeps the blue header inside the rounded corners */
+  overflow: hidden; 
 }
 
-/* ... the rest of the file is unchanged ... */
+/* --- THIS IS THE FIX --- */
 .auth-header {
-  background-color: #4A69E2; /* Blue color from your image */
-  width: 100%;
-  height: 150px;
+  background-color: #FFFFFF; 
+  width: 120%;
+  height: 190px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0px;
+  padding-right: 100px; /* Add some padding around the logo */
+  box-sizing: border-box; /* Ensures padding is included in the height/width */
 }
 
-.auth-header p {
-  color: white;
-  font-size: 3em;
-  font-weight: bold;
-  margin: 0;
+.auth-logo {
+  /* This ensures the logo does not exceed the dimensions of the blue header */
+  max-width: 100%;
+  max-height: 100%;
+  /* This scales the image down to fit, preserving its aspect ratio */
+  object-fit: contain; 
 }
 
 .auth-form {
   padding: 30px 40px;
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Space between form elements */
+  gap: 15px;
 }
 
 .auth-form input,
@@ -57,7 +60,7 @@ body, html {
   border: 1px solid #ddd;
   border-radius: 8px;
   font-size: 1em;
-  box-sizing: border-box; /* Important for padding and width */
+  box-sizing: border-box;
 }
 
 .auth-form input:focus,
@@ -68,10 +71,10 @@ body, html {
 }
 
 .submit-button {
-  background-color: #C87542; /* Brown color from your image */
+  background-color: #C87542;
   color: white;
   border: none;
-  border-radius: 25px; /* Pill shape */
+  border-radius: 25px;
   padding: 12px;
   font-size: 1.1em;
   font-weight: bold;
