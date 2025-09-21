@@ -1,0 +1,52 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("loginbg.jpg");
+    background-size: cover;
+}
+
+.loginbox{
+    padding-top: 10px;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-bottom: 50px;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 80px 480px 80px;
+    width: 500px;
+    height: 500px;
+    box-shadow: 10px 10px 10px;
+    border-radius: 50px;
+}
+
+.logobox{
+    width:300px;
+    height: 150px;
+    background-color: rgb(95, 114, 239);
+    margin-left: 95px;
+    margin-bottom: 50px;
+}
+
+.formbox{
+    padding-left: 10px;
+    width: 500px;
+    height: 25px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.submit{
+    margin-left: 150px;
+    width:230px;
+    height:30px;
+    background-color: rgb(192, 96, 32);
+    color: white;
+    border-radius: 5px;
+}
+
+.dropdown{
+    padding-left: 10px;
+    width: 513px;
+    height: 40px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
