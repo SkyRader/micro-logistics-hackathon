@@ -1,5 +1,4 @@
 import pandas as pd
-from flask import request
 from datetime import datetime
 
 USERS_FILE = "backend/data/users.csv"
@@ -15,21 +14,12 @@ def write_csv(df, file_path):
     df.to_csv(file_path, index=False)
 
 
-
 # ---------- User helpers ----------
 def read_users():
     return read_csv(USERS_FILE)
 
 def write_users(df):
     write_csv(df, USERS_FILE)
-
-def get_current_user():
-    user_id = request.args.get("user_id")  # temporary until Firebase Auth
-    users = read_users()
-    if user_id not in users["id"].values:
-        return None
-    return users[users["id"] == user_id].iloc[0].to_dict()
-
 
 
 # ---------- Food helpers ----------
@@ -44,7 +34,7 @@ def add_food_item(user, data):
     new_id = f"food_{len(df)+1:03d}"
     item = {
         "id": new_id,
-        "donorId": user["id"],
+        "donorId": user["uid"],  # changed from user["id"]
         "imageURL": data.get("imageURL", ""),
         "title": data.get("title", ""),
         "description": data.get("description", ""),
@@ -68,7 +58,7 @@ def claim_food_item(ngo_user, food_id):
         return None
     idx = idx[0]
     df.at[idx, "status"] = "Claimed"
-    df.at[idx, "claimedBy"] = ngo_user["id"]
+    df.at[idx, "claimedBy"] = ngo_user["uid"]  # changed from user["id"]
     df.at[idx, "claimedAt"] = datetime.utcnow().isoformat()
     write_food_items(df)
     return df.iloc[idx].to_dict()
