@@ -1,6 +1,6 @@
 from flask import Flask, jsonify
-from routes.donors import donor_bp
-from routes.ngos import ngo_bp
+from .routes.donors import donor_bp
+from .routes.ngos import ngo_bp
 
 app = Flask(__name__)
 
