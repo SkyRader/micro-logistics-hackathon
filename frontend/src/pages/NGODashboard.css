@@ -1,0 +1,86 @@
+.dashboard-container {
+  /* Provide space for the fixed navbar */
+  padding-top: 80px; 
+  padding-left: 40px;
+  padding-right: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+  gap: 20px;
+}
+
+.header-title {
+  font-size: 2.2em;
+  color: #555;
+  font-weight: 300; /* A lighter font weight */
+  border-bottom: 3px solid #ffcc80;
+  padding-bottom: 5px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.filter-button {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 25px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.filter-button:hover {
+  background-color: #e68900;
+  transform: translateY(-2px);
+}
+
+.claims-link {
+  color: #777;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.claims-link:hover {
+  color: #ff9800;
+}
+
+.food-list-container {
+  display: grid;
+  /* Create responsive columns: they will be at least 400px wide */
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 30px;
+  padding-bottom: 40px;
+}
+
+.status-message {
+  font-size: 1.2em;
+  color: #666;
+  text-align: center;
+  padding: 40px;
+  grid-column: 1 / -1; /* Make message span all columns */
+}
+
+.status-message.error {
+  color: #d32f2f;
+  font-weight: bold;
+  background-color: #ffebee;
+  border: 1px solid #d32f2f;
+  border-radius: 8px;
+}

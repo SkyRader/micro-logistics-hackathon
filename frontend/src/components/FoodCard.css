@@ -1,0 +1,75 @@
+.food-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  grid-template-rows: auto; /* Rows grow as needed */
+  gap: 8px 20px; /* Space between rows and columns */
+  
+  /* Styling to match screenshot */
+  background-color: #fffaf0; /* Light creamy orange */
+  border-radius: 20px;
+  padding: 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #444;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  border: 1px solid #ffe8cc;
+  
+  /* Define grid areas for easy placement */
+  grid-template-areas:
+    "name qty"
+    "provider qty"
+    "description description"
+    "expiry location"
+    "expiry button";
+}
+
+/* Placing each element in its designated grid area */
+.item-name         { grid-area: name; }
+.provider-name     { grid-area: provider; }
+.item-qty          { grid-area: qty; justify-self: end; } /* Align to the right */
+.item-description  { grid-area: description; }
+.item-expiry       { grid-area: expiry; align-self: end; } /* Align to the bottom of its cell */
+.item-location     { grid-area: location; justify-self: center; }
+.claim-button      { grid-area: button; justify-self: end; } /* Align to the right */
+
+/* Styling individual elements */
+.item-name {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #d95f02; /* Darker orange for the title */
+  margin: 0;
+}
+
+.provider-name,
+.item-qty,
+.item-description,
+.item-expiry,
+.item-location {
+  font-size: 1.1em;
+}
+
+.item-description {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.provider-name {
+  color: #666;
+}
+
+.claim-button {
+  background-color: #ff9800; /* Vibrant orange */
+  color: white;
+  border: none;
+  border-radius: 25px; /* Fully rounded ends */
+  padding: 12px 25px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.claim-button:hover {
+  background-color: #e68900; /* Darker shade on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}

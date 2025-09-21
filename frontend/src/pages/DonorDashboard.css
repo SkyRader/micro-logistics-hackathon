@@ -1,0 +1,43 @@
+.donor-dashboard-container {
+  padding: 20px;
+  padding-top: 80px; /* Space for the fixed navbar */
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* On smaller screens, stack the sections */
+@media (max-width: 900px) {
+  .dashboard-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-section h2, .list-section h2 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ff7f50;
+  padding-bottom: 5px;
+}
+
+.form-section p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.list-section .placeholder-text {
+  background-color: #fffaf0;
+  border: 1px dashed #ffcc80;
+  padding: 40px;
+  text-align: center;
+  color: #888;
+  border-radius: 8px;
+  font-style: italic;
+}

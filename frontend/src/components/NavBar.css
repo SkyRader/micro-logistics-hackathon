@@ -1,0 +1,63 @@
+/* A modern reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.topnav {
+  /* Layout */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px;
+  width: 100%;
+  position: fixed; /* Keep it at the top */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  /* Styling */
+  background-color: #ff7f50; /* Coral orange */
+  color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-left .logo {
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 25px; /* Adds space between items */
+}
+
+.user-info {
+  font-size: 15px;
+  font-weight: 500;
+  padding: 5px;
+  border-bottom: 2px solid transparent; /* For hover effect */
+  transition: border-color 0.3s;
+}
+
+.user-info:hover {
+  border-color: white; /* Underline on hover */
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
