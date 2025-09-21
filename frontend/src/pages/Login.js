@@ -2,7 +2,7 @@ import React from "react"
 import "./logincss.css";
 
 function Content(){
-
+return(
 <div className="loginbox">
   <div className="logobox">
     <p>hello</p>
@@ -35,7 +35,7 @@ function Content(){
     <input className="submit" type="button" defaultValue="LOGIN" />
   </form>
 </div>
-
+)
 }
 
 export default Content
