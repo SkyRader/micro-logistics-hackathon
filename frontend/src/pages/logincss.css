@@ -1,63 +1,112 @@
-body{
-    margin: 0;
-    padding: 0;
-    background-image: url("loginbg.jpg");
-    background-size: cover;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* General body styles for the auth pages */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
-.loginbox{
-    padding-top: 10px;
-    padding-left: 80px;
-    padding-right: 80px;
-    padding-bottom: 50px;
-    background-color: rgb(255, 255, 255);
-    margin: 80px 480px 80px;
-    width: 500px;
-    height: 500px;
-    box-shadow: 10px 10px 10px;
-    border-radius: 50px;
+.auth-background {
+  /* THIS IS THE FIX: Use %PUBLIC_URL% to correctly reference the image */
+  background-image: url('loginbg.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-.logobox{
-    width:300px;
-    height: 150px;
-    background-color: rgb(95, 114, 239);
-    margin-left: 95px;
-    margin-bottom: 50px;
+.auth-container {
+  width: 450px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Keeps the blue header inside the rounded corners */
 }
 
-
-
-
-
-
-.submit{
-    margin-left: 150px;
-    width:230px;
-    height:30px;
-    margin-top: 20px;
-    background-color: rgb(192, 96, 32);
-    color: white;
-    border-radius: 20px;
+/* ... the rest of the file is unchanged ... */
+.auth-header {
+  background-color: #4A69E2; /* Blue color from your image */
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-
-
-
-
-.formbox {
-  border: 2px solid orange;   /* same border thickness + color */
-  border-radius: 5px;         /* same rounded corners */
-  padding: 8px;               /* equal padding inside */
-  font-size: 16px;            /* same font size */
-  outline: none;              /* remove default focus outlines */
-  appearance: none;           /* remove browser default dropdown styling */
-  -webkit-appearance: none;   /* Safari/Chrome */
-  -moz-appearance: none;      /* Firefox */
-  width: 500px;
-  margin-bottom: 10px;
+.auth-header p {
+  color: white;
+  font-size: 3em;
+  font-weight: bold;
+  margin: 0;
 }
+
+.auth-form {
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between form elements */
+}
+
+.auth-form input,
+.auth-form select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  box-sizing: border-box; /* Important for padding and width */
+}
+
+.auth-form input:focus,
+.auth-form select:focus {
+  outline: none;
+  border-color: #ff7f50;
+  box-shadow: 0 0 0 2px rgba(255, 127, 80, 0.2);
+}
+
+.submit-button {
+  background-color: #C87542; /* Brown color from your image */
+  color: white;
+  border: none;
+  border-radius: 25px; /* Pill shape */
+  padding: 12px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.submit-button:hover {
+  background-color: #b3683a;
+}
+
+.form-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.form-links a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+.form-links a:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  color: #dc3545;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 0.9em;
+}
+

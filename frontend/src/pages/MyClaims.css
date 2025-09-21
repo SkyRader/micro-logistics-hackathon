@@ -1,0 +1,38 @@
+.my-claims-container {
+  padding: 20px;
+  padding-top: 80px; /* Space for navbar */
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.claims-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #ff7f50;
+  padding-bottom: 10px;
+}
+
+.claims-header h1 {
+  color: #333;
+  font-size: 2.2em;
+  margin: 0;
+}
+
+.back-link {
+  color: #ff7f50;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.error-message, .placeholder-text {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+}
