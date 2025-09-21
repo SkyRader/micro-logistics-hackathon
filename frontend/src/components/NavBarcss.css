@@ -1,27 +1,47 @@
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 .topnav {
-  overflow: hidden;
-  background-color: rgb(237, 116, 71);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: #ff7f50; /* keep your color */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  margin-left: 200px;
+.nav-left .logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
 }
 
-.noprofile{
-    float: right;
-    height: 50px;
-    width: 50px;
-    margin-right:30px;
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 25px; /* spacing between user info */
 }
 
+.user-info {
+  font-size: 14px;
+  color: white;
+  font-weight: 500;
+}
+
+.user-info:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  cursor: pointer;
+}

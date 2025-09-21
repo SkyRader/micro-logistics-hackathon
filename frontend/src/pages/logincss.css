@@ -6,6 +6,7 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
 .loginbox{
     padding-top: 10px;
     padding-left: 80px;
@@ -19,6 +20,7 @@ body{
     border-radius: 50px;
 }
 
+
 .logobox{
     width:300px;
     height: 150px;
@@ -26,6 +28,9 @@ body{
     margin-left: 95px;
     margin-bottom: 50px;
 }
+
+
+
 
 
 
@@ -38,6 +43,9 @@ body{
     color: white;
     border-radius: 20px;
 }
+
+
+
 
 
 
