@@ -1,0 +1,7 @@
+# Ignore secrets
+backend/firebase-service-account.json
+backend/.env
+
+# Ignore node modules
+node_modules/
+frontend/node_modules/
