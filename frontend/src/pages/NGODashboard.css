@@ -1,9 +1,7 @@
 .dashboard-container {
-  /* Provide space for the fixed navbar */
-  padding-top: 80px; 
-  padding-left: 40px;
-  padding-right: 40px;
-  max-width: 1400px;
+  padding: 20px;
+  padding-top: 80px; /* Add space for the fixed navbar */
+  max-width: 1200px;
   margin: 0 auto;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -13,74 +11,83 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
-  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
-  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.header-title {
-  font-size: 2.2em;
-  color: #555;
-  font-weight: 300; /* A lighter font weight */
-  border-bottom: 3px solid #ffcc80;
-  padding-bottom: 5px;
+.dashboard-header h1 {
+  color: #333;
+  font-size: 2.5em;
 }
 
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 20px;
+}
+
+/* --- STYLES FOR FILTER CONTROLS --- */
+.filter-controls {
+  display: flex;
+  gap: 10px;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  padding: 5px;
 }
 
 .filter-button {
-  background-color: #ff9800;
-  color: white;
+  background-color: transparent;
   border: none;
-  border-radius: 20px;
-  padding: 10px 25px;
-  font-size: 1em;
+  color: #555;
+  padding: 8px 18px;
+  border-radius: 15px;
+  font-size: 0.9em;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.filter-button.active-filter {
+  background-color: #ff7f50;
+  color: white;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.filter-button:hover {
-  background-color: #e68900;
-  transform: translateY(-2px);
+.filter-button:not(.active-filter):hover {
+  background-color: #e0e0e0;
 }
+/* --- END OF NEW STYLES --- */
 
 .claims-link {
-  color: #777;
+  color: #555;
   text-decoration: none;
   font-size: 1.1em;
   font-weight: 500;
-  transition: color 0.3s;
+  position: relative;
 }
 
-.claims-link:hover {
-  color: #ff9800;
+.claims-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #ff7f50;
+  transition: width 0.3s;
 }
 
-.food-list-container {
+.claims-link:hover::after {
+  width: 100%;
+}
+
+.food-list {
   display: grid;
-  /* Create responsive columns: they will be at least 400px wide */
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 30px;
-  padding-bottom: 40px;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
 }
 
-.status-message {
-  font-size: 1.2em;
-  color: #666;
-  text-align: center;
-  padding: 40px;
-  grid-column: 1 / -1; /* Make message span all columns */
-}
-
-.status-message.error {
+.error-message {
   color: #d32f2f;
-  font-weight: bold;
-  background-color: #ffebee;
-  border: 1px solid #d32f2f;
-  border-radius: 8px;
+  font-size: 1.2em;
 }
+
